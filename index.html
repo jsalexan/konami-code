@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body>
+<script>
+    const pressed = [];
+    const secretCode = 'platypus';
+    // event listener to identify which keys are typed
+    window.addEventListener('keyup', (e) => {
+        console.log(e.key);
+        pressed.push(e.key);
+        // By using 'negative secretCode' we start at the end of the array and count back
+        if(pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length))
+        // Check if array contains our secret code
+        if(pressed.join('').includes(secretCode)) {
+            console.log('I CAUGHT A PLATYPUS!!');
+            cornify_add();
+            // Cornify will add unicorns or rainbows to the page each time it's called.
+        }
+        console.log(pressed);
+    });
+</script>
+</body>
+</html>
